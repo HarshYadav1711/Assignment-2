@@ -21,6 +21,10 @@ class Settings(BaseSettings):
     host: str = "0.0.0.0"
     port: int = 8000
     
+    # Vercel/Serverless Configuration
+    # Vercel sets PORT automatically, but we default to 8000 for local dev
+    vercel_port: Optional[int] = None
+    
     # LLM Configuration
     openai_model: str = "gpt-4o"  # Updated to current model. Alternatives: gpt-4-turbo, gpt-3.5-turbo, gpt-4
     # Can be overridden via OPENAI_MODEL environment variable
